@@ -1,0 +1,52 @@
+pragma solidity ^0.4.2;
+import 'assets.sol';
+
+
+contract AssetTracker {
+
+    string id;
+
+    function setId(string serial) public {
+
+        id = serial;
+
+}
+
+    function getId() public constant returns(string) {
+        reurn id;
+    }
+
+struct Asset {
+
+    string name;
+    string description;
+    string manufacturer;
+    bool initialized;
+
+}
+
+mapping(string = > Asset) private assetStore;
+
+assetStore[uuid] = Asset(name, description, true, manufacturer);
+
+mapping(address => mapping(string => bool)) private wallet;
+
+walletStore[msg.sender][uuid] = true;
+
+event AssetCreate(address account, string uuid, string manufacturer)
+event RejectCreate(address account, string uuid, string message)
+event AssetCreate(address account, string uuid, string manufacturer)
+event RejectCreate(address account, string uuid, string message)
+
+function createAsset(string name, string description, string manufacturer)
+
+    if(assetStore[uuid]initialized) {
+        RejectCreate(msg.sender, uuid, "Asset with this UUID is already created")
+
+    }
+
+    assetStore[uuid] = Asset(name, description, true)
+    walletStore[msg.sender][uuid] = true;
+    AssetCreate[msg.sender, uuid, manufacturer];
+
+}
